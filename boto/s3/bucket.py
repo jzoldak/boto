@@ -227,7 +227,7 @@ class Bucket(object):
                 return None, response
             else:
                 raise self.connection.provider.storage_response_error(
-                    response.status, response.reason, '')
+                    response.status, response.reason, response.msg)
 
     def list(self, prefix='', delimiter='', marker='', headers=None,
              encoding_type=None):
